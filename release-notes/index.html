@@ -1,0 +1,1915 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://dynotx.github.io/liminal-orm/release-notes/">
+      
+      
+        <link rel="prev" href="../future-direction/">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.21">
+    
+    
+      
+        <title>Release notes - Liminal ORM</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.2a3383ac.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-Z8YQTKP7B6"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-Z8YQTKP7B6",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-Z8YQTKP7B6",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="pink">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#v400" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+  <!-- the following line is displayed in the announcement bar -->
+<!-- keep length under 164 characters (less HTML tags) to fit on 1280px desktop window -->
+Next Liminal monthly meeting Oct. 17, 9am EST - <a
+    href="https://dynotx.zoom.us/j/84892664995?pwd=rvDLYf7qfKkJVrnyWDr8fdBBrmllDV.1">Zoom link here!</a>
+
+<button class="md-banner__button md-icon" aria-label="Don't show this again" id="close-banner">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z">
+        </path>
+    </svg>
+</button>
+
+<script>
+    document.getElementById('close-banner').addEventListener('click', function () {
+        this.parentElement.style.display = 'none';
+    });
+</script>
+
+          </div>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Liminal ORM" class="md-header__button md-logo" aria-label="Liminal ORM" data-md-component="logo">
+      
+  <img src="../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Liminal ORM
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Release notes
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="pink"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="pink"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dynotx/liminal-orm" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynotx/liminal-orm
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../getting-started/prerequisites/" class="md-tabs__link">
+          
+  
+  
+  Getting Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../reference/benchling-connection/" class="md-tabs__link">
+          
+  
+  
+  Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../blog/dynotx-recommended-sop/" class="md-tabs__link">
+          
+  
+  
+  Blog
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../contributing/" class="md-tabs__link">
+          
+  
+  
+  Contributing
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../future-direction/" class="md-tabs__link">
+          
+  
+  
+  Future Direction
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  Release Notes
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Liminal ORM" class="md-nav__button md-logo" aria-label="Liminal ORM" data-md-component="logo">
+      
+  <img src="../assets/logo.png" alt="logo">
+
+    </a>
+    Liminal ORM
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dynotx/liminal-orm" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynotx/liminal-orm
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Getting Started
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Getting Started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/prerequisites/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Prerequisites
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Installation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Setup
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/first-migration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    First migration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/downgrading/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Downgrading
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/synchronizing-results-schemas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Synchronizing results schemas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/tutorials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tutorials
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Reference
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Reference
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/benchling-connection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Benchling connection
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/benchling-session/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Benchling session
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/dropdowns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dropdowns
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/entity-schemas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Entity schemas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/results-schemas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Results schemas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/validation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Validation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/revision-file/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Revision file
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Operations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Blog
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Blog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blog/dynotx-recommended-sop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DynoTx Recommended SOP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Contributing
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Contributing
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Contributing to Liminal ORM
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Future Direction
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Future Direction
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../future-direction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Future direction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Release Notes
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Release Notes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Release notes
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Release notes
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#v400" class="md-nav__link">
+    <span class="md-ellipsis">
+      v4.0.0
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v4.0.0">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      🗒️ Summary
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#upgrade-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Upgrade Steps
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v320" class="md-nav__link">
+    <span class="md-ellipsis">
+      v3.2.0
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v3.2.0">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#summary_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      🗒️ Summary
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#upgrade-steps_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Upgrade Steps
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v310" class="md-nav__link">
+    <span class="md-ellipsis">
+      v3.1.0
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v3.1.0">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#summary_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      🗒️ Summary
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#upgrade-steps_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Upgrade Steps
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v300" class="md-nav__link">
+    <span class="md-ellipsis">
+      v3.0.0
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v3.0.0">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#summary_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      🗒️ Summary
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#upgrade-steps_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Upgrade Steps
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v200" class="md-nav__link">
+    <span class="md-ellipsis">
+      v2.0.0
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v2.0.0">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#summary_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      🗒️ Summary
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#upgrade-steps_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Upgrade Steps
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v110" class="md-nav__link">
+    <span class="md-ellipsis">
+      v1.1.0
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v1.1.0">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#upgrade-steps_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Upgrade Steps
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#v400" class="md-nav__link">
+    <span class="md-ellipsis">
+      v4.0.0
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v4.0.0">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      🗒️ Summary
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#upgrade-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Upgrade Steps
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v320" class="md-nav__link">
+    <span class="md-ellipsis">
+      v3.2.0
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v3.2.0">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#summary_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      🗒️ Summary
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#upgrade-steps_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Upgrade Steps
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v310" class="md-nav__link">
+    <span class="md-ellipsis">
+      v3.1.0
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v3.1.0">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#summary_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      🗒️ Summary
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#upgrade-steps_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Upgrade Steps
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v300" class="md-nav__link">
+    <span class="md-ellipsis">
+      v3.0.0
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v3.0.0">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#summary_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      🗒️ Summary
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#upgrade-steps_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Upgrade Steps
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v200" class="md-nav__link">
+    <span class="md-ellipsis">
+      v2.0.0
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v2.0.0">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#summary_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      🗒️ Summary
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#upgrade-steps_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Upgrade Steps
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v110" class="md-nav__link">
+    <span class="md-ellipsis">
+      v1.1.0
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v1.1.0">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#upgrade-steps_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Upgrade Steps
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+  
+                  
+
+
+  
+  
+
+
+  <h1>Release notes</h1>
+
+<p>For full release notes, please visit the <a href="https://github.com/dynotx/liminal-orm/releases">GitHub Releases page</a>. Release versions follow <a href="https://semver.org/">semantic versioning</a>. This page will document migration steps needed for major and minor version changes.</p>
+<h2 id="v400">v4.0.0</h2>
+<p><a href="https://github.com/dynotx/liminal-orm/releases/tag/4.0.0"><img alt="github" src="https://img.shields.io/badge/github-v4.0.0-blue" /></a> <a href="https://pypi.org/project/liminal-orm/4.0.0/"><img alt="pypi" src="https://img.shields.io/pypi/v/liminal-orm/4.0.0.svg" /></a></p>
+<h3 id="summary">🗒️ Summary</h3>
+<p>The v4.0.0 brings the ability to define results schemas in code using Liminal. Results tables are used to capture experimental and assay data in lab notebooks. With a single command, you can define all of your results schemas as classes in your codebase using Liminal's framework. This enables a simple and strongly-typed way of accessing this data, and the ability to create custom validation rules for your results. For full details, check out the <a href="../reference/results-schemas">results schemas</a> documentation! This release also adds functionality to the <code>liminal generate-files</code> command to allow for more flexibility (run <code>liminal generate-files --help</code> for full details). Support for deprecated features has been extended to the release of v5.0.0.</p>
+<h3 id="upgrade-steps">Upgrade Steps</h3>
+<ul>
+<li>
+<p>PR <a href="https://github.com/dynotx/liminal-orm/pull/133">#133</a>: results schemas!</p>
+</li>
+<li>
+<p><strong>Upgrade step</strong>: Follow the getting started guide to <a href="../getting-started/synchronizing-results-schemas/">generate your results schema classes</a>.</p>
+</li>
+</ul>
+<h2 id="v320">v3.2.0</h2>
+<p><a href="https://github.com/dynotx/liminal-orm/releases/tag/3.2.0"><img alt="github" src="https://img.shields.io/badge/github-v3.2.0-blue" /></a> <a href="https://pypi.org/project/liminal-orm/3.2.0/"><img alt="pypi" src="https://img.shields.io/pypi/v/liminal-orm/3.2.0.svg" /></a></p>
+<h3 id="summary_1">🗒️ Summary</h3>
+<p>This release brings Liminal's CLI and logic closer to <a href="https://alembic.sqlalchemy.org/en/latest/api/commands.html">Alembic's patterns</a>, making it more familiar for users. It also fixes a couple bugs in a backwards compatible manner.</p>
+<ul>
+<li>
+<p>Liminal now saves the tenant's revision_id within Benchling instead of tracking it locally within env.py. When a new migration is run, Liminal will save the 'remote' revision_id within a generated _liminal_remote schema.</p>
+</li>
+<li>
+<p>The <code>liminal current &lt;ENV&gt;</code> command now returns the revision_id from Benchling instead of the local env.py file. This is now the same pattern as Alembic.</p>
+</li>
+<li>
+<p>There is a new <code>liminal head &lt;ENV&gt;</code> command that returns the latest revision_id based on your local revision timeline in <em>versions/</em>. This is the same pattern as Alembic.</p>
+</li>
+<li>
+<p><code>liminal autogenerate &lt;ENV&gt; '&lt;message&gt;'</code> is now <code>liminal revision &lt;ENV&gt; '&lt;message&gt;'</code>. This is now the same pattern as Alembic.</p>
+</li>
+<li>
+<p>Bug fixes with multi_relationship function and imports.</p>
+</li>
+</ul>
+<h3 id="upgrade-steps_1">Upgrade Steps</h3>
+<p>There are no upgrade steps for this release, but there are deprecation warnings that need to be resolved by the v4.0.0 release.</p>
+<ul>
+<li>
+<p>The local <code>_CURRENT_REVISION_ID</code> variable is now longer used and should be deleted from your env.py file.</p>
+</li>
+<li>
+<p>The multi_relationship function arguments have changed, and should be updated accordingly. See the <a href="../reference/entity-schemas/#relationships-module">multi_relationship</a> documentation for full details.</p>
+</li>
+</ul>
+<h2 id="v310">v3.1.0</h2>
+<p><a href="https://github.com/dynotx/liminal-orm/releases/tag/3.1.0"><img alt="github" src="https://img.shields.io/badge/github-v3.1.0-blue" /></a> <a href="https://pypi.org/project/liminal-orm/3.1.0/"><img alt="pypi" src="https://img.shields.io/pypi/v/liminal-orm/3.1.0.svg" /></a></p>
+<h3 id="summary_2">🗒️ Summary</h3>
+<p>This release adds the ability to define tenant-specific configuration flags for entity schemas. The goal of this is to reflect Benchling's tenant level configuration flags and propagate the logic across Liminal. We have started with the <code>schemas_enable_change_warehouse_name</code> flag. When set to <code>True</code>, this flag allows users to change the warehouse name of entity schemas and fields and migrate the changes to your tenants.</p>
+<h3 id="upgrade-steps_2">Upgrade Steps</h3>
+<ul>
+<li>
+<p>PR <a href="https://github.com/dynotx/liminal-orm/pull/120">#120</a>: adds ability to define tenant-specific configuration flags for entity schemas.</p>
+</li>
+<li>
+<p><strong>Upgrade step</strong>: Remove the <code>warehouse_access</code> parameter from the <code>BenchlingConnection</code> object. Set the <code>config_flags</code> parameter on your <code>BenchlingConnection</code> object(s) to a <code>TenantConfigFlags</code> object. See documentation for <a href="../reference/benchling-connection">BenchlingConnection</a> for full details.</p>
+</li>
+</ul>
+<h2 id="v300">v3.0.0</h2>
+<p><a href="https://github.com/dynotx/liminal-orm/releases/tag/3.0.0"><img alt="github" src="https://img.shields.io/badge/github-v3.0.0-blue" /></a> <a href="https://pypi.org/project/liminal-orm/3.0.0/"><img alt="pypi" src="https://img.shields.io/pypi/v/liminal-orm/3.0.0.svg" /></a></p>
+<h3 id="summary_3">🗒️ Summary</h3>
+<p>v3.0.0 release brings Liminal's coverage of entity schemas to 100% parity with Benchling, a big milestone in Liminal's roadmap!! Any property that can be defined on Entity Schemas in Benchling can now be defined and migrated through Liminal. With this release, user's will now be able to define unit aware fields and "Show bases in expanded view" in their Liminal models defined in code.</p>
+<ul>
+<li><code>show_bases_in_expanded_view</code> has been added to the <code>SchemaProperties</code> parameters
+<img width="968" alt="Screenshot 2025-02-20 at 8 26 34 AM" src="https://github.com/user-attachments/assets/b01fe696-6d6b-4f9e-9349-f577de3f6b29" /></li>
+</ul>
+<hr />
+<ul>
+<li><code>unit_name</code> and <code>decimal_places</code> has been added to the <code>Column</code> parameters.
+<img width="587" alt="Screenshot 2025-02-20 at 8 25 30 AM" src="https://github.com/user-attachments/assets/a4f6fe8c-652c-4fa0-89b0-abe45fa6d7a3" /></li>
+</ul>
+<p>Next up are results schemas 🚀</p>
+<h3 id="upgrade-steps_3">Upgrade Steps</h3>
+<ul>
+<li>PR <a href="https://github.com/dynotx/liminal-orm/pull/114">#114</a>: adds ability to define unit aware fields for entity schema fields.</li>
+<li>
+<p>PR <a href="https://github.com/dynotx/liminal-orm/pull/113">#113</a>: adds ability to define <code>show_bases_in_expanded_view</code> for entity schema fields.</p>
+</li>
+<li>
+<p><strong>Upgrade step</strong>: The guidance for migrating to v3.0.0 is after you've upgraded your liminal package to the latest version, regenerate your schemas defined in code using <code>liminal generate-files &lt;benchling_tenant&gt; -p [&lt;write_path&gt;]</code>. This will write your dropdown/schema files based on your Benchling tenant to a specified path, this time with the new properties that are now covered by Liminal. If you do not have many enitty schemas, it may be easier to manually update your schema files with the new properties. Note, you may have to comment out the schema/dropdown imports in your <code>env.py</code> file before generating the files since there may be some breaking changes to your current schema/dropdown files.</p>
+</li>
+</ul>
+<h2 id="v200">v2.0.0</h2>
+<h3 id="summary_4">🗒️ Summary</h3>
+<p>v2.0.0 brings Liminal closer to reaching 100% parity with Benchling Entity Schemas. This release introduces the ability to define namesets, chip naming properties, and constraints on your Liminal entity schema models. Validation has also gone through a major change making it MUCH easier to define custom business logic as validation rules for entities. Now, users can use the <code>@liminal_validator</code> decorator to define validation functions within Liminal models. When TestSchema.validate() is run, these decorated functions are run on all queried entity rows from the Benchling warehouse, catching any <code>Exceptions</code> raised and returned a <code>BenchlingValidatorReport</code>.</p>
+<ul>
+<li><code>constraint_fields</code>, <code>include_registry_id_in_chips</code>, <code>use_registry_id_as_label</code> added to SchemaProperties parameters. <code>__name_template__</code> can now be defined on Liminal models
+<img width="1193" alt="Screenshot 2025-02-05 at 10 30 40 AM" src="https://github.com/user-attachments/assets/59d03096-8d95-46a5-b4d0-c18c01331363" /></li>
+</ul>
+<hr />
+<ul>
+<li>New pattern for defining validation rules</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">liminal.validation</span><span class="w"> </span><span class="kn">import</span> <span class="n">ValidationSeverity</span><span class="p">,</span> <span class="n">liminal_validator</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Pizza</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">,</span> <span class="n">CustomEntityMixin</span><span class="p">):</span>
+    <span class="o">...</span>
+
+    <span class="nd">@liminal_validator</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">cook_time_and_temp_validator</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">cook_time</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">cook_temp</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Cook temp is required if cook time is set&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">cook_time</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">cook_temp</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Cook time is required if cook temp is set&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>Next release will aim to finish off coverage for Entity Schemas!</p>
+<h3 id="upgrade-steps_4">Upgrade Steps</h3>
+<ul>
+<li>PR <a href="https://github.com/dynotx/liminal-orm/pull/88">#88</a>: adds ability to defined name templates for entity schemas</li>
+<li>PR <a href="https://github.com/dynotx/liminal-orm/pull/84">#84</a>: adds ability to define chip naming for entity schemas</li>
+<li>
+<p>PR <a href="https://github.com/dynotx/liminal-orm/pull/82">#82</a>: adds ability to define constraints for entity schemas.</p>
+</li>
+<li>
+<p><strong>Upgrade step</strong>: The guidance for migrating to v2.0.0 is to regenerate your schemas defined in code using <code>liminal generate-files &lt;benchling_tenant&gt; -p [&lt;write_path&gt;]</code>. This will recreate your dropdown/schema files, this time with the new properties covered by Liminal. If you do not have many enitty schemas, it may be easier to manually update your schema files with the new properties.</p>
+</li>
+<li>
+<p>PR <a href="https://github.com/dynotx/liminal-orm/pull/68">#68</a>: refactors how validators are done in Liminal using a decorator pattern. Refer to the <a href="https://dynotx.github.io/liminal-orm/reference/validators/">validators</a> page for full details on implementation.</p>
+</li>
+<li>
+<p><strong>Upgrade step</strong>: If you don't have validators defined, no action is needed! Otherwise, you will need to manually refactor your validators to use the new pattern.</p>
+</li>
+</ul>
+<h2 id="v110">v1.1.0</h2>
+<p><a href="https://github.com/dynotx/liminal-orm/releases/tag/1.1.0"><img alt="github" src="https://img.shields.io/badge/github-v1.1.0-blue" /></a> <a href="https://pypi.org/project/liminal-orm/1.1.0/"><img alt="pypi" src="https://img.shields.io/pypi/v/liminal-orm/1.1.0.svg" /></a></p>
+<h3 id="upgrade-steps_5">Upgrade Steps</h3>
+<ul>
+<li>PR <a href="https://github.com/dynotx/liminal-orm/pull/64">#64</a>: makes query function optional in schema classes.<ul>
+<li>Remove query functions from schema classes, unless you have custom logic.</li>
+</ul>
+</li>
+<li>PR <a href="https://github.com/dynotx/liminal-orm/pull/72">#72</a>: block warehouse name changes to operations.<ul>
+<li>BenchlingConnetion now takes in <code>warehouse_access</code> parameter. If you do not have warehouse access on your Benchling tenant, set this to <code>False</code>.</li>
+</ul>
+</li>
+<li>
+<p>PR <a href="https://github.com/dynotx/liminal-orm/pull/53">#53</a>: move field wh name to base field props.</p>
+<ul>
+<li>Update historical revision files with changed operation signatures.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1"># Replace UpdateEntitySchemaName with...</span>
+<span class="n">UpdateEntitySchema</span><span class="p">(</span><span class="s1">&#39;old_warehouse_name&#39;</span><span class="p">,</span> 
+    <span class="n">BaseSchemaProperties</span><span class="p">(</span><span class="n">warehouse_name</span><span class="o">=</span><span class="s1">&#39;new_warehouse_name&#39;</span><span class="p">))</span>
+
+<span class="c1"># Replace UpdateEntitySchemaFieldName with...</span>
+<span class="n">UpdateEntitySchemaField</span><span class="p">(</span><span class="s1">&#39;entity_schema_warehouse_name&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;field_warehouse_name&#39;</span><span class="p">,</span> 
+    <span class="n">BaseFieldProperties</span><span class="p">(</span><span class="n">warehouse_name</span><span class="o">=</span><span class="s1">&#39;new_warehouse_name&#39;</span><span class="p">))</span>
+
+<span class="c1"># CreateEntitySchemaField no longer takes wh_field_name as a parameter. </span>
+<span class="c1"># Now gets passed in via BaseFieldProperties.</span>
+<span class="n">CreateEntitySchemaField</span><span class="p">(</span><span class="s1">&#39;entity_schema_warehouse_name&#39;</span><span class="p">,</span> 
+    <span class="n">BaseFieldProperties</span><span class="p">(</span><span class="n">warehouse_name</span><span class="o">=</span><span class="s1">&#39;new_warehouse_name&#39;</span><span class="p">,</span> <span class="o">...</span><span class="p">))</span>
+
+<span class="c1"># CreateEntitySchema takes in a list of fields instead of dict[str, Benchling FieldProperties]</span>
+<span class="n">CreateEntitySchema</span><span class="p">(</span><span class="n">BaseSchemaProperties</span><span class="p">(</span><span class="o">...</span><span class="p">),</span> <span class="p">[</span><span class="n">BaseFieldProperties</span><span class="p">(</span><span class="o">...</span><span class="p">),</span> <span class="o">...</span><span class="p">])</span>
+</code></pre></div>
+</li>
+<li>
+<p>PR <a href="https://github.com/dynotx/liminal-orm/pull/63">#63</a>: numpy and pandas version tightening.</p>
+<ul>
+<li>numpy = “^1.23.5”</li>
+<li>pandas = "&gt;=1.5.3" --&gt; “^1.5.3"</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+  <script src="/flarelytics/client.js"></script>
+  
+
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../future-direction/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Future direction">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Future direction
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "content.code.copy", "content.code.select", "search.suggest", "search.share", "search.highlight", "content.tabs.link", "header.autohide", "navigation.footer"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>
